@@ -3,11 +3,6 @@
         padding-bottom: 40px;
       }
 
-      #header {
-        text-align: center;
-      }
-
-
       /* Custom container */
       .container-narrow {
         margin: 0 auto;
@@ -38,14 +33,11 @@
       .marketing p + h4 {
         margin-top: 28px;
       }
-      .pizza-image: {
-	width: 100px;
-	height: 100px;
-      }      
-      .pizza-image:hover {
-        opacity: .8;
-      }
-
-      .pizza-image:active {
-        opacity: 1;
+      .pizza-image {
+        display: block;
+        width: 600px;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-image: url(temporaryPizzaIcon.png);
+        background-position: center;
       }
