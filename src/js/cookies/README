@@ -1,0 +1,10 @@
+JS files for saving and extracting information
+from cookies.
+
+checkCookies.js
+    Extracts information from cookies, and either loads
+    api/findOrder.js or redirects to account form if
+    no cookies or to order form if valid cookies.
+createCookies.js
+    Creates cookies with specified username and password
+    SHA.  Closes dropdown menu.

@@ -1,0 +1,12 @@
+JS wrappers for Hackfood API calls.
+
+account.js
+    Create a new account.  Redirects to account page
+    if incorrect password.
+changeAccountInfo.js
+    Sets new credit card and address info.
+order.js
+    Place an order.
+findOrder.js
+    Gets account info and finds last order. Redirects to order
+    form if not available.
