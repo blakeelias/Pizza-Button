@@ -71,35 +71,7 @@
 
       <div class="row-fluid marketing">
         <div class="span6">
-<<<<<<< HEAD
 	  <a class="btn btn-link" style="width: 100%; background-color: black" href="#">Change Account</a>
-=======
-          <h4>Subheading</h4>
-          <p>
-                  <span id='button'>
-                      Pizza Button!
-                  </span>
-
-                  <span class="result">
-                  </span>
-
-                  <form id="account">
-                    Name: <input type="text" id="name" /><br />
-                    Address: <input type="text" id="address" /><br />
-                    Phone number: <input type="text" id="phone" /><br />
-                    <input type="submit" >
-                  </form>
-
-                  <script src="/backend/restaurants.js"></script>
-                  
-          </p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
->>>>>>> f9a2a751fcbb7c63ac31684dbc4e93c148753c84
         </div>
 
         <div class="span6">
