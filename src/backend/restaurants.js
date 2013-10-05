@@ -8,3 +8,7 @@ $('#account').submit(function (event) {
     
     
 });
+
+new Restaurant('/rd/147').makeRestaurantRequest('https://r-test.ordr.in', [], '', 'GET', function (data) {
+$( ".result" ).html(data);
+});
