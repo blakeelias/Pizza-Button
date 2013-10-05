@@ -1,6 +1,20 @@
 #!/usr/bin/env python
 
-print "Content-type:text/html"
+import cgi
+import cgitb
+
+print "Content-type:application/json"
 print
-print "<title>Test CGI</title>"
-print "<p>hi</p>"
+
+args = cgi.FieldStorage()
+
+# Call methods on args.
+
+
+print "{"
+
+for i in args.keys():
+  if i != 0:
+    print "\targ{0}:\t{1}\n".format(i, args[i].value)
+
+print "}"
