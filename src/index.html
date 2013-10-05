@@ -2,7 +2,7 @@
 <html>
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="backend/restaurants.js">
+        
         <title> Pizza Button </title>
     </head>
 
@@ -10,5 +10,17 @@
         <div id='button'>
             Pizza Button!
         </div>
+        
+        <div class="result">
+        </div>
+        
+        <form>
+          Name: <input type="text" name="name" /><br />
+          Address: <input type="text" name="address" /><br />
+          Phone number: <input type="text" name="phone" /><br />
+          <input type="submit">
+        </form>
+        
+        <script src="/backend/restaurants.js"></script>
     </body>
 </html>
