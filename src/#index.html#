@@ -69,13 +69,13 @@
   </head>
 
   <body>
-
+1
     <div class="container-narrow">
       <div id="header">
 	<h1> the easiest way to order pizza </h1>
       <hr>
       
-	<a href="#"><img src="temporaryPizzaIcon.png" width="300" height="300"></a><br>
+	<a href="#"><img src="img/temporaryPizzaIcon.png" width="300" height="300"></a><br>
 	<a class="btn btn-danger">Place Order!</a>
       </div>
 
