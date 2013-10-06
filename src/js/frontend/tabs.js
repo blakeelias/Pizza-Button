@@ -5,16 +5,18 @@
 
 define([],
     function() {
-        $("#dropdown").tabs({
-            active: false,
-            collapsible: true,
-            heightStyle: "content",
-            hide: {
-                effect: "slideUp"
-            },
-            show: {
-                effect: "slideDown"
-            }
-            
-        }).css("visibility","visible");
+        return function() {
+            $("#dropdown").tabs({
+                active: false,
+                collapsible: true,
+                heightStyle: "content",
+                hide: {
+                    effect: "slideUp"
+                },
+                show: {
+                    effect: "slideDown"
+                }
+                
+            }).css("visibility","visible");
+        }
     });

@@ -1,7 +1,7 @@
 define([],
     function() {
-        return function(hide) { 
+        return function() { 
             $(".billingAddress").css("display",
-                (hide) ? "none" : "inline");
+                (document.forms.account-form.addressesAreSame.value) ? "none" : "inline");
         }
     });
