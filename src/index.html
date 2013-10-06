@@ -49,8 +49,8 @@
           <div id="account">
 
 	    <div class="control-group error" id="account-info-error"></div>
-        <form name="account-form">
-	      <div class="span3">
+	    <div class="span3">
+	    <form class="account-form">
 		<label for="firstNamee">First Name:</label>
 		<input name="firstName" type="text"></input>
 		<label for="lastName">Last Name:</label>
@@ -131,7 +131,10 @@
 		<label for="creditCardNumber">Credit Card Number:</label>
 		<input name="creditCardNumber" type="text"></input>
 		<label for="creditCardCvc">Credit Card CVC:</label>
-		<input name="creidtCardCvc" type="text"></input>
+		<input name="creditCardCvc" type="text"></input>
+		<label class="checkbox">
+		  <input name="addressesAreSame" type="checkbox" checked>Billing address is the same as delivery address.
+		</label>
 		<label class="billingAddress" for="billingAddress1">Billing Address Line 1:</label>
 		<input class="billingAddress" name="billingAddress1" type="text"></input>
 		<label class="billingAddress" for="billingAddress2">Billing Address Line 2 (optional):</label>
@@ -196,8 +199,8 @@
 	      <label class="billingAddress" for="billingZipCode">Zip Code:</label>
 	      <input class="billingAddress" name="billingZipCode" type="text"></input>
 	      <input class="btn btn-success" type="submit" value="Add Account"></input>
-	      </div>
 	    </form>
+	    </div>
           </div>
           <div id="order">
               Lorem ipsum order
