@@ -50,7 +50,7 @@
 
 	    <div class="control-group error" id="account-info-error"></div>
 	    <div class="span3">
-	    <form class="account-form">
+	    <form name="account-form">
 		<label for="firstNamee">First Name:</label>
 		<input name="firstName" type="text"></input>
 		<label for="lastName">Last Name:</label>
@@ -198,7 +198,7 @@
 	      </select>
 	      <label class="billingAddress" for="billingZipCode">Zip Code:</label>
 	      <input class="billingAddress" name="billingZipCode" type="text"></input>
-	      <input class="btn btn-success" type="submit" value="Add Account"></input>
+	      <input id="account-submit" class="btn btn-success" type="button" value="Create Account"></input>
 	    </form>
 	    </div>
           </div>
@@ -209,6 +209,7 @@
     </div> <!-- /container -->
 
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
     <script src="js/jquery/jquery-2.0.3.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/jquery/jquery-ui-1.10.3/ui/jquery-ui.js">

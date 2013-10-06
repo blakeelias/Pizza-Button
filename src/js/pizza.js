@@ -2,6 +2,16 @@
  * Require JS loader for the pizza button app.
  **/
 
+error = function(errorThrown) {
+    if (errorThrown == null) {
+        return;
+    } else if (typeof errorThrown === "string") {
+        $(".error").html(errorThrown);
+    } else if (errorThrown.hasOwnProperty("message")) {
+        $(".error").html(errorThrown.message);
+    }
+}
+
 requirejs.config({
     baseUrl: 'js',
     paths: {
@@ -11,11 +21,14 @@ requirejs.config({
     }
 });
 
-requirejs(['frontend/tabs', 'frontend/displayBilling'],
-    function(setUpTabs, displayBilling) {
-        $("#addressesAreSame").onclick(displayBilling(document.forms.account-form.addressesAreSame.value);
-        setUpTabs();
-        
+requirejs(['frontend/tabs', 'frontend/displayBilling', 
+    'frontend/accountSubmit'],
+    function(setUpTabs, displayBilling, accountSubmit) {
+        $(document).ready(function() {
+            $("#addressesAreSame").click(displayBilling);
+            setUpTabs();
+            $("#account-submit").click(accountSubmit);
+        });
     });
 
         
