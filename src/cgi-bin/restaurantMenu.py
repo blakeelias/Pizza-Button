@@ -14,7 +14,7 @@ def itemString(item, levelDepth):
     
     if float(item['price']) > 0:
         s += ' '*(levelDepth+4) + '<div class="price">' + item['price'] + '</div>\n'
-        s += ' '*(levelDepth+4) + '<input type="text" id="quantity" />\n'
+        s += ' '*(levelDepth+4) + '<input type="text" class="quantity" />\n'
     
     if 'children' in item:
         for child in item['children']:

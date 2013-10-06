@@ -15,13 +15,18 @@ define([],
                 success:        function(jqXHR) {
                     $("#menu").html(jqXHR);
                     $("#menu").prepend("<a id='placeOrder'>Place order</a>");
+                    var quantities = {};
                     $("#menu #placeOrder").click(function() {
                         alert('hi');
-                        $('input#quantity').each(function() {
+                        $('.quantity').each(function() {
                             //if ($(this).parentElement) {
-                                alert('value: ' + $(this).val() + $(this).parentElement.attr('id'));
+                                quantities[$(this).parent().attr('id')] = $(this).val();
+                                //alert('value: ' + $(this).val() + $(this).parentElement.attr('id'));
                             //}
                         });
+                        
+//                        document.getElementById();
+                        alert(quantities);
                     });
                 },
                 error:          function(jqXHR, textStatus, errorThrown) {
