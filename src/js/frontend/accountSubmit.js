@@ -70,12 +70,14 @@ define(["api/newCreditCard"],
                 error("Please enter a valid zip code.");
                 return;
             }
+            
+            o_inputData.s_passwordHash = CryptoJS.SHA1(o_inputData.s_password1);
 
             var ajaxData = {
                 email : o_inputData.s_email,
                 first_name : o_inputData.s_firstName,
                 last_name : o_inputData.s_lastName,
-                pw : CryptoJS.SHA1(o_inputData.s_password1).toString()
+                pw : o_inputData.s_passwordHash
             }
 
             $.ajax("/cgi-bin/create_account_cgi.py", {
@@ -84,12 +86,12 @@ define(["api/newCreditCard"],
                 contentType:    "application/json;charset=utf-8",
                 success:        function(jqXHR) {
                     var data = (typeof jqXHR === "string") ?
-                        jqXHR : JSON.parse(jqXHR);
+                        JSON.parse(jqXHR) : jqXHR;
                     clearError();
                     newCreditCard(o_inputData);
                 },
                 error:          function(jqXHR, textStatus, errorThrown) {
-                    error("Encounted unexpected error: " +
+                    error("Encounted unexpected error while creating account.  The email address may already be in use: " +
                         textStatus + " " + errorThrown);
                 }
             });
