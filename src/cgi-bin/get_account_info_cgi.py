@@ -23,8 +23,8 @@ args = cgi.FieldStorage()
 
 # Call methods on args.
 
-email = args["email"].value
-current_pw = args["current_pw"].value
+email = 'demitri@gmail.com'#args["email"].value
+current_pw = '12345666666666666'#args["current_pw"].value
 
 try:
   x =   ordrin_api.ordrin_api.get_account_info(email,
