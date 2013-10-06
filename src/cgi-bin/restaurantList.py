@@ -41,6 +41,8 @@ save_stdout = sys.stdout
 sys.stdout = open('trash', 'w')
 deliveryList = ordrin_api.delivery_list("ASAP", args["addr"].value, args["city"].value, args["zip"].value)
 sys.stdout = save_stdout
+# End prevent printing
+
 pizzaRestaurants = filter(lambda restaurant: 'cu' in restaurant and 'Pizza' in restaurant['cu']
                                               and 'is_delivering' in restaurant and restaurant['is_delivering'] > 0,
                           deliveryList)
