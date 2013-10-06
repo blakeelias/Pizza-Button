@@ -2,6 +2,9 @@
  * Require JS loader for the pizza button app.
  **/
 
+clearError = function() {
+    $(".error").empty();
+}
 error = function(errorThrown) {
     if (errorThrown == null) {
         return;
