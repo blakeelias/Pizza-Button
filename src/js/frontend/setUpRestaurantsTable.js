@@ -1,5 +1,5 @@
-define(["cookies/getCookies"],
-    function(getCookies) {
+define(["cookies/getCookies", "cookies/hasCookies"],
+    function(getCookies, hasCookies) {
         return function () {
             var loadTable = function(data) {
                 var myData = (typeof data === "string") ? JSON.parse(data) : data;
@@ -20,6 +20,12 @@ define(["cookies/getCookies"],
                     ]
                 });
             };
+
+            var cookiesPresent = hasCookies();
+            if(!cookiesPresent) {
+                $("#dropdown").tabs({active : 0});
+                error("Please create an account before setting order details.");
+            }
 
             var cookieInfo = getCookies();
             var username = cookieInfo.username;
