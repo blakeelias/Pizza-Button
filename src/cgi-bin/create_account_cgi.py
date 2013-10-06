@@ -2,7 +2,6 @@
 import sys
 import json
 
-#from urllib2 import HTTPError
 from requests.exceptions import HTTPError
 
 import cgi
@@ -27,8 +26,8 @@ args = cgi.FieldStorage()
 # Call methods on args.
 email = args["email"].value
 pw = args["pw"].value
-first_name = #args['first_name'].value
-last_name = #args['last_name'].value
+first_name = args['first_name'].value
+last_name = args['last_name'].value
 
 try:
   x = ordrin_api.ordrin_api.create_account(email, pw, first_name, last_name)
@@ -41,3 +40,4 @@ except HTTPError as e:
 Content-type:application/json'''
   print
   print "{}"
+
