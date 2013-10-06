@@ -16,15 +16,13 @@ args = {
 }
 '''
 
-print "Content-type:application/json"
-print
 
 args = cgi.FieldStorage()
 
 # Call methods on args.
 
-email = 'demitri@gmail.com'#args["email"].value
-current_pw = '12345666666666666'#args["current_pw"].value
+email = args["email"].value
+current_pw = args["current_pw"].value
 
 try:
   x =   ordrin_api.ordrin_api.get_account_info(email,
@@ -32,7 +30,7 @@ try:
   print "Content-type:application/json"
   print
   print json.dumps(x)
-except HTTPError as e:
+except:
   print '''HTTP/1.1 401 Unauthorized 
 Content-type:application/json'''
   print
