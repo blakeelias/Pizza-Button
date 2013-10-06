@@ -28,7 +28,7 @@ requirejs(['frontend/tabs', 'frontend/displayBilling',
     'frontend/accountSubmit'],
     function(setUpTabs, displayBilling, accountSubmit) {
         $(document).ready(function() {
-            $("#addressesAreSame").click(displayBilling);
+            $("#addresses-are-same").click(displayBilling);
             setUpTabs();
             $("#account-submit").click(accountSubmit);
         });
