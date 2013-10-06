@@ -64,7 +64,7 @@ try:
   print "Content-type:application/json"
   print
   print json.dumps(x)
-except HTTPError as e:
+except:
   print '''HTTP/1.1 404 Client 
 Content-type:application/json'''
   print
