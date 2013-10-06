@@ -25,8 +25,8 @@ requirejs.config({
 });
 
 requirejs(['frontend/tabs', 'frontend/displayBilling', 
-	   'frontend/accountSubmit', 'frontend/loadConfirmation', 'frontend/hideConfirmation'],
-	  function(setUpTabs, displayBilling, accountSubmit, loadConfirmation, hideConfirmation) {
+	   'frontend/accountSubmit', 'frontend/loadConfirmation', 'frontend/hideConfirmation', 'frontend/pizzaButtonOnClick'],
+	  function(setUpTabs, displayBilling, accountSubmit, loadConfirmation, hideConfirmation, pizzaButtonOnClick) {
         $(document).ready(function() {
             $("#addresses-are-same").click(displayBilling);
             setUpTabs();
@@ -35,7 +35,7 @@ requirejs(['frontend/tabs', 'frontend/displayBilling',
 	    $("#confirmationContainer").on('click', hideConfirmation);
 	    $("#confirmationWindow").on('click', function(e) {e.stopPropagation();});
 	    //TODO (whaack): REMOVE, just here for testing
-	    $("#pizza-button").click(loadConfirmation);
+	    $("#pizza-button").click(pizzaButtonOnClick);
         });
     });
 
