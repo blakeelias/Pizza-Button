@@ -28,5 +28,5 @@ pw = args["pw"].value
 first_name = args['first_name'].value
 last_name = args['last_name'].value
 
-return ordrin_api.ordrin_api.create_account(email, pw, first_name, last_name)
+print ordrin_api.ordrin_api.create_account(email, pw, first_name, last_name)
 

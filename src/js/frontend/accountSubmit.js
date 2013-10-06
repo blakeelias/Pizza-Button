@@ -1,6 +1,20 @@
 define(["api/newCreditCard"],
     function(newCreditCard) {
         return function() {        
+
+            var addressesAreSame = document.forms["account-form"].addressesAreSame.checked;
+            var a_formElements = document.forms["account-form"].elements;
+
+            for (var i = 0; i < a_formElements.length; ++i) {
+                var el = a_formElements[i];
+                if(((el.required && el.className != "billingAddress") || !addressesAreSame)
+                    && el.type == "text" 
+                    && (el.value == null || el.value == "")) {
+                    error("Please fill in all required fields."+ el.value);
+                    return;
+                }
+            }
+
             var o_inputData = {
                 s_firstName:    document.forms["account-form"].firstName.value,
                 s_lastName:     document.forms["account-form"].lastName.value,
@@ -15,7 +29,7 @@ define(["api/newCreditCard"],
                 s_deliveryZipCode: document.forms["account-form"].deliveryZipCode.value,
                 s_creditCardNumber: document.forms["account-form"].creditCardNumber.value,
                 s_creditCardCvc:    document.forms["account-form"].creditCardCvc.value,
-                b_addressesAreSame: document.forms["account-form"].addressesAreSame.value,
+                b_addressesAreSame: document.forms["account-form"].addressesAreSame.checked,
                 s_billingAddress1:  document.forms["account-form"].billingAddress1.value,
                 s_billingAddress2:  document.forms["account-form"].billingAddress2.value,
                 s_billingCity: document.forms["account-form"].billingCity.value,
@@ -33,6 +47,27 @@ define(["api/newCreditCard"],
             }
             if(o_inputData.s_password1 != o_inputData.s_password2) {
                 error("Passwords do not match.");
+                return;
+            }
+            if(!o_inputData.s_deliveryState.match(/^[A-Z]{2}$/)) {
+                error("Please select a valid state.");
+                return;
+            }
+            if(!addressesAreSame && !o_inputData.s_billingState.match(/^[A-Z]{2}$/)) {
+                error("Please select a valid state.");
+                return;
+            }
+            if(!o_inputData.s_creditCardNumber.match(/^[0-9]{13,16}$/)) {
+                error("Please enter a valid credit card number.");
+                return;
+            }
+            if(!o_inputData.s_creditCardCvc.match(/^[0-9]{2,5}$/)) {
+                error("Please enter a valid CVC.");
+                return;
+            }
+            if(!o_inputData.s_deliveryZipCode.match(/^[0-9]{5}$/)
+                    || (!o_inputData.s_billingZipCode.match(/^[0-9]{5}$/) && !addressesAreSame)) {
+                error("Please enter a valid zip code.");
                 return;
             }
 
