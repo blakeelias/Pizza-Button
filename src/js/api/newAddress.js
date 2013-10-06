@@ -1,4 +1,4 @@
-define(['createCookies'],
+define(['cookies/createCookies'],
     function(createCookies) {
         return function (data) {
             var myData = (typeof data === "string") ? JSON.parse(data) : data;
