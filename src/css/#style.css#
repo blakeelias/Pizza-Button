@@ -50,5 +50,5 @@
         opacity: 1;
       }
       .billingAddress {
-        visibility: hidden;
+
       }	
