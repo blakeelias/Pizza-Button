@@ -3,8 +3,8 @@
  * information.
  **/
 
-define([],
-    function() {
+define(["frontend/setUpRestaurantsTable"],
+    function(setUpRestTable) {
         return function() {
             $("#dropdown").tabs({
                 active: false,
@@ -15,6 +15,12 @@ define([],
                 },
                 show: {
                     effect: "slideDown"
+                },
+                activate: function(event, ui) {
+                    var active = $("#dropdown").tabs("option", "active");
+                    if (active == 1) {
+                        setUpRestTable();
+                    }
                 }
                 
             }).css("visibility","visible");
