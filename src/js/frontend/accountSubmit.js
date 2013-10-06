@@ -7,14 +7,27 @@ define(["api/newCreditCard"],
 
             for (var i = 0; i < a_formElements.length; ++i) {
                 var el = a_formElements[i];
-                if((el.required && (el.className != "billingAddress" || !addressesAreSame))
+                if(el.required
                     && el.type == "text" 
                     && (el.value == null || el.value == "")) {
                     error("Please fill in all required fields.");
                     return;
                 }
             }
-
+/**
+            var badInput = false;
+            $(".billingAddress").each(
+                function() {
+                if($(this).attr("name") != "billingAddress2" && !addressesAreSame && ($(this).val() == null || $(this).val() == "")) {
+                    alert($(this).attr("name");
+                    error("Please fill in all required fields.");
+                    badInput = true;
+                }
+            });
+            if(badInput) {
+                return;
+            }
+*/
             var o_inputData = {
                 s_firstName:    document.forms["account-form"].firstName.value,
                 s_lastName:     document.forms["account-form"].lastName.value,
