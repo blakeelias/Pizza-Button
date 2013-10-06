@@ -10,8 +10,11 @@ define([],
             collapsible: true,
             heightStyle: "content",
             hide: {
-                effect: "slide"
+                effect: "slideUp"
+            },
+            show: {
+                effect: "slideDown"
             }
             
-        });
+        }).css("visibility","visible");
     });

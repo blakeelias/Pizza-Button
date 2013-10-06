@@ -14,6 +14,7 @@ requirejs.config({
 requirejs(['frontend/tabs'],
     function(setUpTabs) {
         setUpTabs();
+        
     });
 
         
