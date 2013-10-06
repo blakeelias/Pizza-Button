@@ -32,8 +32,8 @@ requirejs(['frontend/tabs', 'frontend/displayBilling',
             setUpTabs();
             $("#account-submit").click(accountSubmit);
 	    $("#cancel-order").click(hideConfirmation);
-	    $("#confirmationContainer").click(hideConfirmation);
-	    $("#confirmationWindow").click(function() {alert('yo');});
+	    $("#confirmationContainer").on('click', hideConfirmation);
+	    $("#confirmationWindow").on('click', function(e) {e.stopPropagation();});
 	    //TODO (whaack): REMOVE, just here for testing
 	    $("#pizza-button").click(loadConfirmation);
         });
