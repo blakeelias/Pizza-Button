@@ -9,6 +9,6 @@ import ordrin
 # ordrin.TEST or ordrin.PRODUCTION
 server = ordrin.TEST
 
-ordrin = ordrin.APIs("ordrin.APIsjWSw_CthhgY0afo7hMbN7gd3AlPtKLYtDs2Mf_uituM",server)
+ordrin_api = ordrin.APIs("jWSw_CthhgY0afo7hMbN7gd3AlPtKLYtDs2Mf_uituM",server)
 
 
