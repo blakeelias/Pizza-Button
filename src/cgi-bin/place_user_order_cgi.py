@@ -29,25 +29,27 @@ args = {
 }
 '''
 
-print "Content-type:application/json"
-print
-
 args = cgi.FieldStorage()
 
 # Call methods on args.
 
-rid = args["rid"].value
-tip = args["tip"].value
-first_name = args["first_name"].value
-last_name = args["last_name"].value
-email = args["email"].value
-current_pw = args["current_pw"].value
-nick = args["nick"].value
-card_nick = args["card_nick"].value
-delivery_date = args["delivery_date"].value
+rid = '147'#args["rid"].value
+tip = '5'#args["tip"].value
+first_name = 'Example'#args["first_name"].value
+last_name = 'User'#args["last_name"].value
+email = 'testing@ordrin.com'#args["email"].value
+current_pw = 'password'#args["current_pw"].value
+nick = 'Work'#args["nick"].value
+card_nick = 'Work'#args["card_nick"].value
+delivery_date = 'ASAP'#args["delivery_date"].value
 
 x = ordrin_api.ordrin_api.order_user(rid, tip, first_name,
     last_name, email, current_pw, nick, card_nick,
     delivery_date)
+
+print "Content-type:application/json"
+print
+print x
+
 
 
