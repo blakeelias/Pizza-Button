@@ -3,8 +3,9 @@ define([],
         return function(orderInfo) {
 	    $("#confirmationContainer").css("display", "block");
 	    var ajaxData = {
-		email: accountInfo.username,
-		current_pw: accountInfo.password
+		email: orderInfo.username,
+		current_pw: orderInfo.password
+		//complete the order info object
 	    }
 	    $("#confirm-order").click(
 				      function () {
@@ -13,11 +14,10 @@ define([],
 			data:           ajaxData,
 			contentType:    "application/json;charset=utf-8",
 			success:        function(jqXHR) {
-			var data = jqXHR;
-			loadConfirmation(data['tray']);
+			//Say your order has been placed.
 		    },
 			error:          function(jqXHR, textStatus, errorThrown) {
-			
+			//Handle error of order not going through.
 		    }
 		}); }
 				      );
