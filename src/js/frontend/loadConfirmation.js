@@ -1,5 +1,5 @@
-define([],
-    function() {
+define(['frontend/hideConfirmation'],
+    function(hideConfirmation) {
         return function(orderInfo) {
 	    $("#confirmationContainer").css("display", "block");
 	    var ajaxData = {
@@ -14,10 +14,13 @@ define([],
 			data:           ajaxData,
 			contentType:    "application/json;charset=utf-8",
 			success:        function(jqXHR) {
-			//Say your order has been placed.
+			//TODO(whaack): Say your order has been placed.
+			hideConfirmation();
+			
 		    },
 			error:          function(jqXHR, textStatus, errorThrown) {
 			//Handle error of order not going through.
+			hideConfirmation();
 		    }
 		}); }
 				      );
