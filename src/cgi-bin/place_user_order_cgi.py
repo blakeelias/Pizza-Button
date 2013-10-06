@@ -46,7 +46,7 @@ nick = args["nick"].value
 card_nick = args["card_nick"].value
 delivery_date = args["delivery_date"].value
 
-return  ordrin_api.ordrin_api.order_user(rid, tip, first_name,
+x = ordrin_api.ordrin_api.order_user(rid, tip, first_name,
     last_name, email, current_pw, nick, card_nick,
     delivery_date)
 

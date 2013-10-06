@@ -25,7 +25,7 @@ args = cgi.FieldStorage()
 
 # Call methods on args.
 email = args["email"].value
-pw = args["pw"].value
+pw =  args["pw"].value
 first_name = args['first_name'].value
 last_name = args['last_name'].value
 

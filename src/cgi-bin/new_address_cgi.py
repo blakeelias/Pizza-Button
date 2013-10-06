@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import sys
 
+import json
+from requests.exceptions import HTTPError
+
 import cgi
 import cgitb
 
@@ -11,7 +14,7 @@ import ordrin_api
 Expects the following arguments:
 args = {
   "email" = __,
-  "nick" = __, default None
+  "nick" = __,
   "phone" = __,
   "zip" = __,
   "addr" = __,
@@ -31,13 +34,22 @@ args = cgi.FieldStorage()
 
 email = args["email"].value
 nick = args["nick"].value
-zipcode = args["zip"].value
+zipcode= args["zip"].value
 phone = args["phone"].value
 addr = args["addr"].value
-addr2 = args["addr2"].value
 city = args["city"].value
 state = args["state"].value
 current_pw = args["current_pw"].value
 
-ordrin_api.ordrin_api.create_addr(email, nick, zipcode, phone,
-    addr, addr2, city, state, current_pw)
+try:
+  x = ordrin_api.ordrin_api.create_addr(email, nick, phone,zipcode, addr, city, state, current_pw)
+  print "Content-type:application/json"
+  print
+  print json.dumps(x)
+except HTTPError as e:
+  print '''HTTP/1.1 404 Client 
+Content-type:application/json'''
+  print
+  print "{}"
+   
+
