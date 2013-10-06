@@ -45,14 +45,14 @@ pizzaRestaurants = filter(lambda restaurant: 'cu' in restaurant and 'Pizza' in r
                                               and 'is_delivering' in restaurant and restaurant['is_delivering'] > 0,
                           deliveryList)
 iTotalRecords = len(pizzaRestaurants)
-pizzaRestaurants = pizzaRestaurants[int(iDisplayStart)-1:int(iDisplayStart)-1+int(iDisplayLength)]
+pizzaRestaurants = pizzaRestaurants[int(iDisplayStart):int(iDisplayStart)+int(iDisplayLength)]
+restaurantsArray = [[r['id'], r['na'], r['addr'], r['mino'], r['del']] for r in pizzaRestaurants]
 
 answer = {
     'iTotalRecords': iTotalRecords,
     'iTotalDisplayRecords': len(pizzaRestaurants),
     'sEcho': args['sEcho'].value,
-    'aaData': pizzaRestaurants
+    'aaData': restaurantsArray
 }
-restaurantsArray = [[r['id'], r['na'], r['addr'], r['mino'], r['del']] for r in pizzaRestaurants]
 
-print(json.dumps(restaurantsArray))
+print(json.dumps(answer))
