@@ -1,15 +1,14 @@
-#!/usr/bin/env python
-import sys
+import ordrin_api
 
-import cgi
-import cgitb
-import ordrin
-
-# Two different servers:
-# ordrin.TEST or ordrin.PRODUCTION
-server = ordrin.TEST
-
-ordrin = ordrin.APIs("ordrin.APIsjWSw_CthhgY0afo7hMbN7gd3AlPtKLYtDs2Mf_uituM",server)
+'''
+Expects the following arguments:
+args = {
+  "email" = __,
+  "pw" = __,
+  "first_name" = __,
+  "last_name" = __,
+}
+'''
 
 print "Content-type:application/json"
 print
@@ -17,5 +16,10 @@ print
 args = cgi.FieldStorage()
 
 # Call methods on args.
+email = args["email"]
+pw = args["pw"]
+first_name = args['first_name']
+last_name = args['last_name']
 
-
+x = ordrin_api.ordrin_api.create_account(email, pw,
+    first_name, last_name)
