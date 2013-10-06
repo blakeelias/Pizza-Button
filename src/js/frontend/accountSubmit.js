@@ -10,7 +10,7 @@ define(["api/newCreditCard"],
                 if((el.required && (el.className != "billingAddress" || !addressesAreSame))
                     && el.type == "text" 
                     && (el.value == null || el.value == "")) {
-                    error("Please fill in all required fields."+ el.value);
+                    error("Please fill in all required fields.");
                     return;
                 }
             }
@@ -85,13 +85,12 @@ define(["api/newCreditCard"],
                 data:           ajaxData,
                 contentType:    "application/json;charset=utf-8",
                 success:        function(jqXHR) {
-                    var data = (typeof jqXHR === "string") ? JSON.parse(jqXHR) : jqXHR;
+                    var data = jqXHR;
                     clearError();
                     newCreditCard(o_inputData);
                 },
                 error:          function(jqXHR, textStatus, errorThrown) {
-                    error("Encounted unexpected error while creating account.  The email address may already be in use: " +
-                        textStatus + " " + errorThrown);
+                    error("Encounted unexpected error while creating account.  The email address may already be in use: " + textStatus + " " + errorThrown);
                 }
             });
         }
