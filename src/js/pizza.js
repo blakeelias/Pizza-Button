@@ -36,7 +36,7 @@ requirejs(['frontend/tabs', 'frontend/displayBilling',
     	    $("#confirmationWindow").on('click', function(e) {e.stopPropagation();});
     	    //TODO (whaack): REMOVE, just here for testing
     	    $("#pizza-button").click(pizzaButtonOnClick);
-    	    $("#ui-id-2").click(menuRender);
+    	    //$("#ui-id-2").click(menuRender);
     	    
         });
     });
