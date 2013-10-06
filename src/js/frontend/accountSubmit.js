@@ -71,7 +71,7 @@ define(["api/newCreditCard"],
                 return;
             }
             
-            o_inputData.s_passwordHash = CryptoJS.SHA1(o_inputData.s_password1);
+            o_inputData.s_passwordHash = CryptoJS.SHA1(o_inputData.s_password1).toString();
 
             var ajaxData = {
                 email : o_inputData.s_email,
@@ -85,8 +85,7 @@ define(["api/newCreditCard"],
                 data:           ajaxData,
                 contentType:    "application/json;charset=utf-8",
                 success:        function(jqXHR) {
-                    var data = (typeof jqXHR === "string") ?
-                        JSON.parse(jqXHR) : jqXHR;
+                    var data = (typeof jqXHR === "string") ? JSON.parse(jqXHR) : jqXHR;
                     clearError();
                     newCreditCard(o_inputData);
                 },
