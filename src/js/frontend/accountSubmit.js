@@ -2,12 +2,12 @@ define(["api/newCreditCard"],
     function(newCreditCard) {
         return function() {        
 
-            var addressesAreSame = document.forms["account-form"].addressesAreSame.checked;
+            var addressesAreSame = $("#addresses-are-same").prop("checked") == true;
             var a_formElements = document.forms["account-form"].elements;
 
             for (var i = 0; i < a_formElements.length; ++i) {
                 var el = a_formElements[i];
-                if(((el.required && el.className != "billingAddress") || !addressesAreSame)
+                if((el.required && (el.className != "billingAddress" || !addressesAreSame))
                     && el.type == "text" 
                     && (el.value == null || el.value == "")) {
                     error("Please fill in all required fields."+ el.value);
@@ -29,7 +29,7 @@ define(["api/newCreditCard"],
                 s_deliveryZipCode: document.forms["account-form"].deliveryZipCode.value,
                 s_creditCardNumber: document.forms["account-form"].creditCardNumber.value,
                 s_creditCardCvc:    document.forms["account-form"].creditCardCvc.value,
-                b_addressesAreSame: document.forms["account-form"].addressesAreSame.checked,
+                b_addressesAreSame: addressesAreSame,
                 s_billingAddress1:  document.forms["account-form"].billingAddress1.value,
                 s_billingAddress2:  document.forms["account-form"].billingAddress2.value,
                 s_billingCity: document.forms["account-form"].billingCity.value,
