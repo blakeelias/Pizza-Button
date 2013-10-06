@@ -14,6 +14,7 @@
     <link href="css/custom-theme/jquery-ui-1.10.0.custom.css"
     rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="js/jquery/DataTables-1.9.4/media/css/jquery.dataTables.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
@@ -30,7 +31,7 @@
       </div>
       
       <div id="pizza-button" class="text-center">
-        <a href="#"><img width="60%" 
+        <a><img width="60%" 
            height="60%" class="pizza-image img-circle" 
            src="img/temporaryPizzaIcon.png"></a>
         <br>
@@ -46,7 +47,7 @@
       <div id="dropdown" style="visibility:hidden">
           <ul>
               <li><a class="btn btn-link"
-                  href="#account">Change Account Info</a></li>
+                  href="#account">Configure Delivery Preferences</a></li>
               <li><a class="btn btn-link"
                   href="#order">Change Order Details</a></li>
           </ul>
@@ -136,6 +137,8 @@
 		<input name="creditCardNumber" type="text" required></input>
 		<label for="creditCardCvc">Credit Card CVC</label>
 		<input name="creditCardCvc" type="text" required></input>
+		<label for="expirationDate">Expiration Date</label>
+		<input name="expirationDate" type="text" placeholder="MM-YYYY"></input>
         <hr>
 		<label class="checkbox">
             <input id="addresses-are-same" name="addressesAreSame" type="checkbox">Billing address is the same as delivery address.
@@ -212,6 +215,15 @@
           </div>
           <div id="order">
               <div id="restaurants">
+                  <table id="restaurants-table" class="table table-hover">
+                      <thead>
+                          <tr>
+                              <td>Restaurant Name</td>
+                              <td>Delivery Minimum</td>
+                              <td>Delivery Time</td>
+                          </tr>
+                      </thead>
+                  </table>
               </div>
 
               <div id="menu">
@@ -241,6 +253,7 @@
     </script>
     <script src="js/jquery/jquery-ui-1.10.3/ui/jquery.ui.tabs.js">
     </script>
+    <script src="js/jquery/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
     <script src="js/jquery/jquery.cookie.js"></script>
     <script src="js/require/require.js"></script>
     <script src="js/pizza.js"></script>
