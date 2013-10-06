@@ -1,7 +1,10 @@
 define([],
     function() {
         return function() { 
-            $(".billingAddress").css("display",
-                (document.forms.account-form.addressesAreSame.checked) ? "none" : "inline");
+            if ($("#addresses-are-same").prop("checked")) {
+                $(".billingAddress").hide();
+            } else {
+                $(".billingAddress").show();
+            }   
         }
     });

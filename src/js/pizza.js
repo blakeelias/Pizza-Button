@@ -28,7 +28,7 @@ requirejs(['frontend/tabs', 'frontend/displayBilling',
 	   'frontend/accountSubmit', 'frontend/loadConfirmation', 'frontend/hideConfirmation'],
 	  function(setUpTabs, displayBilling, accountSubmit, loadConfirmation, hideConfirmation) {
         $(document).ready(function() {
-            $("#addressesAreSame").click(displayBilling);
+            $("#addresses-are-same").click(displayBilling);
             setUpTabs();
             $("#account-submit").click(accountSubmit);
 	    $("#cancel-order").click(hideConfirmation);

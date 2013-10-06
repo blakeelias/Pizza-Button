@@ -21,12 +21,38 @@ Expects the following arguments:
     'zip': __,
 }
 
-Returns a list of restaurants:
-[
-]
+Returns a list of restaurants along with pagination info for data tables:
+{
+    iTotalRecords,
+    iTotalDisplayRecords,
+    sEcho,
+    [
+      [Name, Address, Minimum, Delivery Time],
+      ...,
+      ...
+    ]
 '''
 
-deliveryList = ordrin_api.delivery_list("ASAP", args["addr"].value, args["city"].value, args["zip"].value)
-pizzaRestaurants = filter(lambda restaurant: 'cu' in restaurant and 'Pizza' in restaurant['cu'], deliveryList)
+iDisplayStart = args['iDisplayStart'].value
+iDisplayLength = args['iDisplayLength'].value
 
-print(json.dumps(pizzaRestaurants))
+# Prevent API call from printing a line that we don't want in the output
+save_stdout = sys.stdout
+sys.stdout = open('trash', 'w')
+deliveryList = ordrin_api.delivery_list("ASAP", args["addr"].value, args["city"].value, args["zip"].value)
+sys.stdout = save_stdout
+pizzaRestaurants = filter(lambda restaurant: 'cu' in restaurant and 'Pizza' in restaurant['cu']
+                                              and 'is_delivering' in restaurant and restaurant['is_delivering'] > 0,
+                          deliveryList)
+iTotalRecords = len(pizzaRestaurants)
+pizzaRestaurants = pizzaRestaurants[int(iDisplayStart):int(iDisplayStart)+int(iDisplayLength)]
+restaurantsArray = [[r['id'], r['na'], r['addr'], r['mino'], r['del']] for r in pizzaRestaurants]
+
+answer = {
+    'iTotalRecords': iTotalRecords,
+    'iTotalDisplayRecords': len(pizzaRestaurants),
+    'sEcho': args['sEcho'].value,
+    'aaData': restaurantsArray
+}
+
+print(json.dumps(answer))

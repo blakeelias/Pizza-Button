@@ -137,7 +137,7 @@
 		<label for="creditCardCvc">Credit Card CVC</label>
 		<input name="creditCardCvc" type="text" required></input>
 		<label class="checkbox">
-		  <input name="addressesAreSame" type="checkbox" checked>Billing address is the same as delivery address.
+            <input id="addresses-are-same" name="addressesAreSame" type="checkbox">Billing address is the same as delivery address.</input>
 		</label>
 		<label class="billingAddress" for="billingAddress1">Billing Address Line 1</label>
 		<input class="billingAddress" name="billingAddress1" type="text" required></input>
@@ -202,6 +202,7 @@
 	      </select>
 	      <label class="billingAddress" for="billingZipCode">Zip Code</label>
 	      <input class="billingAddress" name="billingZipCode" type="text" required></input>
+
 	      <input id="account-submit" class="btn btn-success" type="button" value="Create Account"></input>
 	    </form>
 	    </div>

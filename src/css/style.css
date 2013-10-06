@@ -49,13 +49,10 @@
       .pizza-image:active {
         opacity: 1;
       }
-      .billingAddress {
-        display: none !important;
-      }	
       input {
         max-width: 100%;
       }	
-      .errror {
+      .error {
         font-color: red;
       }
       #order-confirmation {
