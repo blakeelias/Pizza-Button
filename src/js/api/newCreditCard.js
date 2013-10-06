@@ -1,4 +1,4 @@
-define('api/newAddress'],
+define(['api/newAddress'],
     function(newAddress) {
         return function (data) {
             var myData = (typeof data === "string") ? JSON.parse(data) : data;
