@@ -54,7 +54,7 @@
         max-width: 100%;
       }	
       .pizza-error {
-        font-color: red;
+        color: red;
       }
       #order-confirmation {
         display: none;
