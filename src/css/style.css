@@ -96,4 +96,21 @@
       }	
       .orderButton {
         margin: auto;
-      }	
+      }
+
+
+
+    /* Restaurant menu display */
+    .item {
+        /*margin-left: 10px;
+        border: 1px solid black;*/
+    }
+    
+    .item input {
+        width: 20px;
+        float: right;
+    }
+    
+    .item .price {
+        /*float: right;*/
+    }

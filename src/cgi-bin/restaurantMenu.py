@@ -10,11 +10,11 @@ def itemString(item, levelDepth):
     s = ' '*levelDepth + '<div class="item" id="menuItem-' + str(item['id']) + '">\n'
     
     s += ' '*(levelDepth+4) + '<div class="name">' + item['name'] + '</div>\n'
-    s += ' '*(levelDepth+4) + '<div class="description"' + item['descrip'] + '</div>\n'
+    s += ' '*(levelDepth+4) + '<div class="description">' + item['descrip'] + '</div>\n'
     
     if float(item['price']) > 0:
         s += ' '*(levelDepth+4) + '<div class="price">' + item['price'] + '</div>\n'
-        s += ' '*(levelDepth+4) + '<input type="text" />\n'
+        s += ' '*(levelDepth+4) + '<input type="text" id="quantity" />\n'
     
     if 'children' in item:
         for child in item['children']:
@@ -23,7 +23,7 @@ def itemString(item, levelDepth):
     s += ' '*levelDepth + '</div>\n'
     return s
 
-print "Content-type:application/json"
+print "Content-type:text/html"
 print
 
 args = cgi.FieldStorage()
@@ -49,7 +49,11 @@ sys.stdout = save_stdout
 # End prevent printing
 
 for item in details['menu']:
-    print itemString(item, 0)
+    try:
+        item['descrip'].lower().index('pizza')
+        print itemString(item, 0)
+    except:
+        pass
 
 #print(json.dumps(details['menu']))
 
