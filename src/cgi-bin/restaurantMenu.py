@@ -7,14 +7,14 @@ from ordrin_api import ordrin_api
 import json
 
 def itemString(item, levelDepth):
-    s = ' '*levelDepth + '<div class="item">\n'
+    s = ' '*levelDepth + '<div class="item" id="menuItem-' + str(item['id']) + '">\n'
     
     s += ' '*(levelDepth+4) + '<div class="name">' + item['name'] + '</div>\n'
-    s += ' '*(levelDepth+4) + '<div class="description">' + item['descrip'] + '</div>\n'
+    s += ' '*(levelDepth+4) + '<div class="description"' + item['descrip'] + '</div>\n'
     
     if float(item['price']) > 0:
         s += ' '*(levelDepth+4) + '<div class="price">' + item['price'] + '</div>\n'
-        s += ' '*(levelDepth+4) + '<input type="checkbox" />\n'
+        s += ' '*(levelDepth+4) + '<input type="text" />\n'
     
     if 'children' in item:
         for child in item['children']:
