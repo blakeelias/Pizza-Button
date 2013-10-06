@@ -21,7 +21,7 @@ define(['cookies/hasCookies', 'cookies/getCookies', 'frontend/loadConfirmation']
 		    success:        function(jqXHR) {
                     var data = jqXHR;
 		    // TODO (whaack): Handle no past orders
-		    loadConfirmation(data['tray']);
+		    loadConfirmation(data);
                 },
 		    error:          function(jqXHR, textStatus, errorThrown) {
 			    accountNotMade();
