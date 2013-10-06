@@ -1,11 +1,18 @@
-define(['cookies/hasCookies', 'cookies/getCookies'],
-       function(hasCookies, getCookies) {
+define(['cookies/hasCookies', 'cookies/getCookies', 'frontend/loadConfirmation'],
+       function(hasCookies, getCookies, loadConfirmation) {
+	var accountNotMade = function() {
+		error("Please login or create an account");
+		$("#dropdown").tabs({active: 0});
+		$('html, body').animate({
+			scrollTop: $("#account-info-error").offset().top
+			    }, 500);
+	};
         return function() {
 	    if (hasCookies()) {
 		var accountInfo = getCookies();
 		var ajaxData = {
-		    username: accountInfo.username,
-		    password: accountInfo.password
+		    email: accountInfo.username,
+		    current_pw: accountInfo.password
 		}
 		$.ajax("/cgi-bin/get_account_info_cgi.py", {
 		    type:           "GET",
@@ -13,18 +20,16 @@ define(['cookies/hasCookies', 'cookies/getCookies'],
 		    contentType:    "application/json;charset=utf-8",
 		    success:        function(jqXHR) {
                     var data = jqXHR;
+		    // TODO (whaack): Handle no past orders
+		    loadConfirmation(data['tray']);
                 },
 		    error:          function(jqXHR, textStatus, errorThrown) {
-			    error("Encounted unexpected error while getting account info. Try creating a new account");
+			    accountNotMade();
 			}
 		    });
 	    }
 	    else {
-		error("Please login or create an account");
-		$("#dropdown").tabs({active: 0});
-		$('html, body').animate({
-			scrollTop: $("#account-info-error").offset().top
-			    }, 500);
+		accountNotMade();
 	    }
         }
     });
