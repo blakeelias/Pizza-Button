@@ -9,6 +9,7 @@ define(["cookies/getCookies"],
                     "bServerSide":true,
                     "sAjaxSource":"/cgi-bin/restaurantList.py?addr="+data.addr+"&city="+data.city+"&zip="+data.zip,
                     "bSort": true,
+                    "bDestroy": true,
                     "iDisplayLength":5,
                     "aoColumns": [
                         {"bVisible":false},
