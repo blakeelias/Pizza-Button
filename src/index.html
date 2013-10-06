@@ -23,7 +23,6 @@
   </head>
 
   <body>
-
     <div class="container-narrow">
       <div id="header">
 	    <h1> the easiest way to order a pizza pie </h1>
@@ -36,7 +35,12 @@
            src="img/temporaryPizzaIcon.png"></a>
         <br>
       </div>
-      
+      <div id="order-confirmation" class="text-center">
+        <a href="#"><img width="60%" 
+           height="60%" class="pizza-image img-circle" 
+           src="img/temporaryPizzaIcon.png"></a>
+	<br>
+      </div>
       <br>
 
       <div id="dropdown" style="visibility:hidden">
@@ -50,7 +54,6 @@
 
 	    <div class="control-group error" id="account-info-error"></div>
 	    <form name="account-form">
-		<label for="firstNamee">First Name:</label>
 	      <div class="span3">
 		<label for="firstNamee">First Name</label>
 		<input name="firstName" type="text"></input>
@@ -209,8 +212,21 @@
           </div>
       </div>
     </div> <!-- /container -->
-
     <!-- Placed at the end of the document so the pages load faster -->
+    <div id="confirmationContainer">
+      <div id="confirmationWindow" class="text-center">
+	<br>
+	<h1>Confirmation</h1>
+	<div id="confirmationText">
+	  Are you sure you want to make this order?
+	</div>
+	<div id="confirmationButtonContainer">
+	  <button class="btn btn-success orderButton">Confirm Order</button>
+	  <button class="btn btn-danger orderButton">Cancel Order</button>
+	</div>
+      </div>
+    </div>
+
     <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
     <script src="js/jquery/jquery-2.0.3.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
