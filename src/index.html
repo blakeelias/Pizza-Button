@@ -51,29 +51,38 @@
           </ul>
           <div id="account">
 	    <form>
-	      <label for="name">Name:</label>
-	      <input id="name" type="text"></input>
-	      <label for="email">Email:</label>
-	      <input id="email" type="text"></input>
-	      <label for="number">Number:</label>
-	      <input id="number" type="text"></input>
-	      <label for="password1">Password:</label>
-	      <input id="password1" type="text"></input>
-	      <label for="password2">Confirm Password:</label>
-	      <input id="password2" type="text"></input>
-	      <label for="billingAddress1">Billing Address Line 1:</label>
-	      <input id="billingAddress1" type="text"></input>
-	      <label for="billingAddress2">Billing Address Line 2 (optional):</label>
-	      <input id="billingAddress2" type="text"></input>
-	      <label for="billingCity">City</label>
-	      <input id="billingCity" type="text"></input>
-	      <label for="billingState">State:</label>
-	      <select id="billingState"> 
-		<option value="" selected="selected">Select a State</option> 
-		<option value="AL">Alabama</option> 
-		<option value="AK">Alaska</option> 
-		<option value="AZ">Arizona</option> 
-		<option value="AR">Arkansas</option> 
+	      <div class="span3">
+		<label for="firstNamee">First Name:</label>
+		<input id="firstName" type="text"></input>
+		<label for="lastName">Last Name:</label>
+		<input id="lastName" type="text"></input>
+		<label for="email">Email:</label>
+		<input id="email" type="text"></input>
+		<label for="number">Number:</label>
+		<input id="number" type="text"></input>
+		<label for="password1">Password:</label>
+		<input id="password1" type="text"></input>
+		<label for="password2">Confirm Password:</label>
+	      </div>
+	      <div class="span3">
+		<input id="password2" type="text"></input>
+		<label for="creditCardNumber">Credit Card Number:</label>
+		<input id="creditCardNumber" type="text"></input>
+		<label for="creditCardCvc">Credit Card CVC:</label>
+		<input id="creidtCardCvc" type="text"></input>
+		<label for="billingAddress1">Billing Address Line 1:</label>
+		<input id="billingAddress1" type="text"></input>
+		<label for="billingAddress2">Billing Address Line 2 (optional):</label>
+		<input id="billingAddress2" type="text"></input>
+		<label for="billingCity">City</label>
+		<input id="billingCity" type="text"></input>
+		<label for="billingState">State:</label>
+		<select id="billingState"> 
+		  <option value="" selected="selected">Select a State</option> 
+		  <option value="AL">Alabama</option> 
+		  <option value="AK">Alaska</option> 
+		  <option value="AZ">Arizona</option> 
+		  <option value="AR">Arkansas</option> 
 		<option value="CA">California</option> 
 		<option value="CO">Colorado</option> 
 		<option value="CT">Connecticut</option> 
@@ -124,6 +133,8 @@
 	      </select>
 	      <label for="zipCode">Zip Code:</label>
 	      <input id="zipCode" type="text"></input>
+	      </div>
+	    </form>
           </div>
           <div id="order">
               Lorem ipsum order
