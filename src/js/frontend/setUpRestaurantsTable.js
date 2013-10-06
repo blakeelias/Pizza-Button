@@ -39,7 +39,7 @@ define(["cookies/getCookies"],
                         },
                         error : function(jqXHR, textStatus, errorThrown) {
                             $("#dropdown").tabs({active : 0});
-                            error("Please create an account before setting delivery preferences");
+                            error("Please create an account before setting order details.");
                         }
                     });
         }
