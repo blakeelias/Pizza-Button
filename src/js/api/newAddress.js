@@ -12,7 +12,7 @@ define(['cookies/createCookies'],
                     data: {
                         email: myData.s_email,
                         nick: "address1",
-                        zipcode: myData.s_deliveryZipCode,
+                        zip: myData.s_deliveryZipCode,
                         phone: myData.s_number,
                         addr: myData.s_deliveryAddress1,
                         addr2: myData.s_deliveryAddress2,
