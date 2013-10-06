@@ -52,6 +52,7 @@
       .billingAddress {
         display: none !important;
       }	
-      .span3 {
-        margin-right: 5px;
-      }
+      input {
+        max-width: 100%;
+      }	
+      
