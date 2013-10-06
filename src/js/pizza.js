@@ -11,8 +11,9 @@ requirejs.config({
     }
 });
 
-requirejs(['frontend/tabs'],
-    function(setUpTabs) {
+requirejs(['frontend/tabs', 'frontend/displayBilling'],
+    function(setUpTabs, displayBilling) {
+        $("#addressesAreSame").onclick(displayBilling(document.forms.account-form.addressesAreSame.value);
         setUpTabs();
         
     });
