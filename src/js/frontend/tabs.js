@@ -6,7 +6,7 @@
 define([],
     function() {
         $("#dropdown").tabs({
-            active:     1,
+            active: false,
             collapsible: true,
             heightStyle: "content",
             hide: {
