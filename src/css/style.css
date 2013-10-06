@@ -55,4 +55,6 @@
       input {
         max-width: 100%;
       }	
-      
+      .errror {
+        font-color: red;
+      }	
