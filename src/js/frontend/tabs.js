@@ -6,12 +6,15 @@
 define([],
     function() {
         $("#dropdown").tabs({
-            active:     1,
+            active: false,
             collapsible: true,
             heightStyle: "content",
             hide: {
-                effect: "slide"
+                effect: "slideUp"
+            },
+            show: {
+                effect: "slideDown"
             }
             
-        });
+        }).css("visibility","visible");
     });
