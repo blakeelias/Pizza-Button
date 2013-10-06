@@ -52,7 +52,7 @@
       input {
         max-width: 100%;
       }	
-      .error {
+      .pizza-error {
         font-color: red;
       }
       #order-confirmation {

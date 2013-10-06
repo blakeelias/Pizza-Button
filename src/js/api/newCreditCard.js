@@ -21,8 +21,7 @@ define(['api/newAddress'],
                         },
                         contentType: "application/json",
                         success: function(jqXHR) {
-                            var data = (typeof jqXHR === "string") ? JSON.parse(jqXHR) : jqXHR;
-                            newAddress(o_inputData);
+                            newAddress(myData);
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             error("Encountered unexpected error while processing credit card information: " + textStatus + " " + errorThrown);
