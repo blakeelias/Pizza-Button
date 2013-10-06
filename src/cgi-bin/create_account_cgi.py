@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 import sys
+import json
+
+from requests.exceptions import HTTPError
 
 import cgi
 import cgitb
@@ -17,8 +20,6 @@ args = {
 }
 '''
 
-print "Content-type:application/json"
-print
 
 args = cgi.FieldStorage()
 
@@ -28,5 +29,15 @@ pw = args["pw"].value
 first_name = args['first_name'].value
 last_name = args['last_name'].value
 
-print ordrin_api.ordrin_api.create_account(email, pw, first_name, last_name)
+try:
+  x = ordrin_api.ordrin_api.create_account(email, pw, first_name, last_name)
+  print "Content-type:application/json"
+  print
+  print json.dumps(x) 
+
+except HTTPError as e:
+  print '''HTTP/1.1 401 Unauthorized 
+Content-type:application/json'''
+  print
+  print "{}"
 

@@ -52,4 +52,48 @@
       input {
         max-width: 100%;
       }	
-      
+      .error {
+        font-color: red;
+      }
+      #order-confirmation {
+        display: none;
+      }
+      #confirmationContainer {
+        display: none;
+        position: fixed;
+	background-color: rgba(0, 0, 0, .5);
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 100%;
+      }
+      #confirmationWindow {
+	position: relative;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 10px 10px 5px black;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	min-width: 200px;
+	min-height: 300px;
+	opacity: 1;
+	padding: 10 10 10 10px;
+      }
+      #confirmationText {
+      	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 50%;
+      }     
+      #confirmationButtonContainer {
+        position: absolute;
+	width: 100%;
+	bottom: 10%;
+	text-align: center;
+      }	
+      .orderButton {
+        margin: auto;
+      }	

@@ -25,12 +25,14 @@ requirejs.config({
 });
 
 requirejs(['frontend/tabs', 'frontend/displayBilling', 
-    'frontend/accountSubmit'],
-    function(setUpTabs, displayBilling, accountSubmit) {
+	   'frontend/accountSubmit', 'frontend/loadConfirmation'],
+	  function(setUpTabs, displayBilling, accountSubmit, loadConfirmation) {
         $(document).ready(function() {
             $("#addresses-are-same").click(displayBilling);
             setUpTabs();
             $("#account-submit").click(accountSubmit);
+	    //TODO (whaack): REMOVE, just here for testing
+	    $("#pizza-button").click(loadConfirmation);
         });
     });
 

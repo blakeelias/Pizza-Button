@@ -3,7 +3,7 @@ import sys
 
 import cgi
 import cgitb
-import ordrin_api
+from ordrin_api import ordrin_api
 import json
 
 print "Content-type:application/json"
@@ -21,10 +21,9 @@ Expects the following arguments:
     'zip': __,
 }
 
-Returns the following shit:
-{
-    returns a fucking pizza
-}
+Returns a list of restaurants:
+[
+]
 '''
 
 deliveryList = ordrin_api.delivery_list("ASAP", args["addr"].value, args["city"].value, args["zip"].value)
