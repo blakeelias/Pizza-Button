@@ -42,6 +42,7 @@ define(["api/newCreditCard"],
                 s_deliveryZipCode: document.forms["account-form"].deliveryZipCode.value,
                 s_creditCardNumber: document.forms["account-form"].creditCardNumber.value,
                 s_creditCardCvc:    document.forms["account-form"].creditCardCvc.value,
+                s_creditCardExpiration:   document.forms["account-form"].expirationDate.value,
                 b_addressesAreSame: addressesAreSame,
                 s_billingAddress1:  document.forms["account-form"].billingAddress1.value,
                 s_billingAddress2:  document.forms["account-form"].billingAddress2.value,
@@ -81,6 +82,10 @@ define(["api/newCreditCard"],
             if(!o_inputData.s_deliveryZipCode.match(/^[0-9]{5}$/)
                     || (!o_inputData.s_billingZipCode.match(/^[0-9]{5}$/) && !addressesAreSame)) {
                 error("Please enter a valid zip code.");
+                return;
+            }
+            if(!o_inputData.s_creditCardExpiration.match(/^[0-9]{2}\/[0-9]{4}$/)) {
+                error("Please enter a valid expiration date.");
                 return;
             }
             
